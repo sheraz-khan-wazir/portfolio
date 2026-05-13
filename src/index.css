@@ -37,6 +37,7 @@ body {
     var(--bg);
   margin: 0;
   min-width: 320px;
+  overflow-x: hidden;
 }
 
 a {
@@ -691,6 +692,24 @@ h3 {
     align-items: flex-start;
   }
 
+  .navbar {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .nav-links a {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 8px 11px;
+  }
+
   .hero,
   .about-section,
   .experience-section,
@@ -703,6 +722,10 @@ h3 {
 
   .hero {
     min-height: auto;
+  }
+
+  .hero-copy {
+    max-width: 680px;
   }
 
   .skills-grid {
@@ -721,13 +744,56 @@ h3 {
 }
 
 @media (max-width: 560px) {
+  .section {
+    padding: 58px 16px;
+  }
+
+  .navbar {
+    padding: 14px 16px;
+  }
+
+  .brand {
+    width: 100%;
+  }
+
   .nav-links {
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .nav-links a {
+    font-size: 0.84rem;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: clamp(2.2rem, 13vw, 3.2rem);
+    line-height: 1.03;
+  }
+
+  h2 {
+    font-size: clamp(1.75rem, 9vw, 2.45rem);
+    line-height: 1.08;
+  }
+
+  .hero-text,
+  .about-card p,
+  .contact-copy p:not(.eyebrow),
+  .experience-heading p:not(.eyebrow),
+  .timeline-item p,
+  .info-card p {
+    font-size: 0.96rem;
+    line-height: 1.65;
+  }
+
+  .hero-actions {
+    gap: 10px;
+    margin-top: 26px;
   }
 
   .hero-visual {
-    aspect-ratio: 0.9;
-    min-height: 430px;
+    aspect-ratio: 0.86;
+    min-height: 360px;
   }
 
   .profile-image {
@@ -736,6 +802,20 @@ h3 {
 
   .skills-grid {
     grid-template-columns: 1fr;
+  }
+
+  .skill-pill {
+    min-height: 112px;
+  }
+
+  .project-media {
+    height: 74px;
+  }
+
+  .project-content,
+  .contact-card,
+  .timeline-item {
+    padding: 16px;
   }
 
   .button,
